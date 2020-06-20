@@ -3,6 +3,28 @@ $(readyNow);
 
 let employees = [];
 
+function refreshTable() {
+  //clear table
+  $("#employeesTable tbody > tr").remove();
+  console.log("table cleared?");
+
+  //populate table with entire contents of employees array
+  populateEmployeesTable();
+
+  function populateEmployeesTable() {
+    for (let i = 0; i < employees.length; i++) {
+      let employeeData = `<tr>
+      <td>${employees[i].firstName}</td>
+      <td>${employees[i].lastName}</td>
+      <td>${employees[i].idNumber}</td>
+      <td>${employees[i].jobTitle}</td>
+      <td>$${employees[i].annualSalary}</td>
+      </tr>`;
+      $("#employeesTableBody").append(employeeData);
+      console.log("appending employeeData", employeeData);
+    }
+  }
+}
 function submitClicked() {
   console.log("hellow from submitClicked!");
   // A 'Submit' button should collect the form information,
@@ -16,9 +38,17 @@ function submitClicked() {
     annualSalary: $("#annualSalaryIn").val(),
   };
   employees.push(userInput);
-  $("#inputDiv .input").val("");
+
+  //clear inputs
+  $("#inputDiv input").val("");
+
   console.log("employees is ", employees);
-  $("#employeesDiv").append(`<p>${employees}</p>`);
+
+  //refresh table and repopulate properly
+  refreshTable();
+
+  //for remove
+  //table.last().val("")... or something
 }
 
 function readyNow() {

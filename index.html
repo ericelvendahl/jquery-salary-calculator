@@ -19,18 +19,8 @@
         _employee first name, last name, ID number, job title, annual salary_. -->
     <h2>Add Employee</h2>
     <div id="inputDiv">
-      <input
-        class="input"
-        id="firstNameIn"
-        type="text"
-        placeholder="First Name"
-      />
-      <input
-        class="input"
-        id="lastNameIn"
-        type="text"
-        placeholder="Last Name"
-      />
+      <input id="firstNameIn" type="text" placeholder="First Name" />
+      <input id="lastNameIn" type="text" placeholder="Last Name" />
       <input
         class="input"
         id="idNumberIn"
@@ -53,6 +43,25 @@
     <br />
     <button id="submitButton">Submit</button>
     <h2>Employees</h2>
-    <div id="employeesDiv"></div>
+    <div id="employeesDiv">
+      <table id="employeesTable">
+        <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Annual Salary</th>
+        </thead>
+        <tbody id="employeesTableBody"></tbody>
+
+        <!-- <tr>
+          <td>Jim</td>
+          <td>Adams</td>
+          <td>3939</td>
+          <td>Roofer</td>
+          <td>22221</td>
+        </tr> -->
+      </table>
+    </div>
   </body>
 </html>
