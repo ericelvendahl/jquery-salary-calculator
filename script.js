@@ -5,9 +5,20 @@ let employees = [];
 
 function deleteRow() {
   console.log("in deleteRow");
+  let deletedRowID = $(this).attr("id");
+
+  for (let i = 0; i < employees.length; i++) {
+    if (employees[i].idNumber === $(this).attr("id")) {
+      console.log("Ready for splicin'!!!!");
+      employees.splice(i, 1);
+    }
+  }
+  console.log("$(this).attr('id') is ", $(this).attr("id"));
+
   $(this).parent().parent().remove();
   console.log("this is", this);
   console.log("$(this).parent().parent() is", $(this).parent().parent());
+
   //$(this).remove();
 }
 
