@@ -5,12 +5,13 @@
 html,
 body {
   margin: 0;
-  background: grey;
 }
 
 header {
-  background-color: lightgrey;
+  color: white;
+  background-color: grey;
   text-align: center;
+  padding: 5px;
 }
 
 #headerDiv {
@@ -27,7 +28,19 @@ td {
 th,
 td {
   padding: 5px;
+  min-width: 100px;
 }
 th {
   text-align: left;
+  padding: 10px;
+  background-color: lightgrey;
+}
+tfoot {
+  /*width: 90%;*/
+}
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+button {
+  padding: auto;
 }

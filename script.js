@@ -19,6 +19,7 @@ function deleteRow() {
   console.log("this is", this);
   console.log("$(this).parent().parent() is", $(this).parent().parent());
 
+  populateEmployeesTable();
   //$(this).remove();
 }
 
@@ -31,7 +32,17 @@ function refreshTable() {
   populateEmployeesTable();
 
   function populateEmployeesTable() {
+    let totalMonthly = 0;
     for (let i = 0; i < employees.length; i++) {
+      totalMonthly += employees[i].annualSalary / 12;
+      $("#totalLabel").text(
+        "$" +
+          totalMonthly.toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })
+      );
+      //shout out to Paul Joachim for posting the above formatting code to slack
       let employeeData = `<tr>
       <td>${employees[i].firstName}</td>
       <td>${employees[i].lastName}</td>
