@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="headerDiv">
+      <header><h1>Salary Calculator</h1></header>
+    </div>
+    <!-- The application should have an input form that collects 
+        _employee first name, last name, ID number, job title, annual salary_. -->
+    <h2>Add Employee</h2>
+    <div id="inputDiv">
+      <input
+        class="input"
+        id="firstNameIn"
+        type="text"
+        placeholder="First Name"
+      />
+      <input
+        class="input"
+        id="lastNameIn"
+        type="text"
+        placeholder="Last Name"
+      />
+      <input
+        class="input"
+        id="idNumberIn"
+        type="text"
+        placeholder="ID Number"
+      />
+      <input
+        class="input"
+        id="jobTitleIn"
+        type="text"
+        placeholder="Job Title"
+      />
+      <input
+        class="input"
+        id="annualSalaryIn"
+        type="text"
+        placeholder="Annual Salary"
+      />
+    </div>
+    <br />
+    <button id="submitButton">Submit</button>
+    <h2>Employees</h2>
+    <div id="employeesDiv"></div>
+  </body>
+</html>
