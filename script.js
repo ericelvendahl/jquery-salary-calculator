@@ -3,6 +3,14 @@ $(readyNow);
 
 let employees = [];
 
+function deleteRow() {
+  console.log("in deleteRow");
+  $(this).parent().parent().remove();
+  console.log("this is", this);
+  console.log("$(this).parent().parent() is", $(this).parent().parent());
+  //$(this).remove();
+}
+
 function refreshTable() {
   //clear table
   $("#employeesTable tbody > tr").remove();
@@ -19,9 +27,22 @@ function refreshTable() {
       <td>${employees[i].idNumber}</td>
       <td>${employees[i].jobTitle}</td>
       <td>$${employees[i].annualSalary}</td>
+      <td><button id="${employees[i].idNumber}" class="deleteButton">Delete</td>
       </tr>`;
       $("#employeesTableBody").append(employeeData);
       console.log("appending employeeData", employeeData);
+
+      //click handler must be added after button exists
+      //this approach might be garbage
+      console.log(`button id should be #${employees[i].idNumber}`);
+
+      // let rowSelector = `#${employees[i].idNumber}`;
+      // $(".deleteButton").on("click", console.log("delete button clicked"));
+      // $(rowSelector).on("hover", console.log("delete button clicked"));
+      // $(".deleteButton").on("click", deleteRow());
+
+      //'this' below is the window object
+      //$(".deleteButton").on("click", console.log("this is", this));
     }
   }
 }
@@ -47,12 +68,16 @@ function submitClicked() {
   //refresh table and repopulate properly
   refreshTable();
 
+  //let rowSelector = `#${employees[i].idNumber}`;
+  $(".deleteButton").on("click", console.log("delete button clicked"));
+  //$(rowSelector).on("hover", console.log("delete button clicked"));
+  $(".deleteButton").on("click", deleteRow);
+
   //for remove
   //table.last().val("")... or something
 }
 
 function readyNow() {
   console.log("JQ");
-
   $("#submitButton").on("click", submitClicked);
 }
