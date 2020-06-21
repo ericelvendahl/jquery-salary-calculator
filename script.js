@@ -19,7 +19,8 @@ function deleteRow() {
   console.log("this is", this);
   console.log("$(this).parent().parent() is", $(this).parent().parent());
 
-  populateEmployeesTable();
+  //refreshTable();
+  //populateEmployeesTable();
   //$(this).remove();
 }
 
@@ -35,6 +36,7 @@ function refreshTable() {
     let totalMonthly = 0;
     for (let i = 0; i < employees.length; i++) {
       totalMonthly += employees[i].annualSalary / 12;
+      console.log("totalMonthly is ", totalMonthly);
       $("#totalLabel").text(
         "$" +
           totalMonthly.toLocaleString(undefined, {
@@ -91,7 +93,7 @@ function submitClicked() {
   refreshTable();
 
   //let rowSelector = `#${employees[i].idNumber}`;
-  $(".deleteButton").on("click", console.log("delete button clicked"));
+
   //$(rowSelector).on("hover", console.log("delete button clicked"));
   $(".deleteButton").on("click", deleteRow);
 

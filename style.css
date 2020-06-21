@@ -37,6 +37,7 @@ th {
 }
 tfoot {
   /*width: 90%;*/
+  height: 10px;
 }
 tr:nth-child(even) {
   background-color: lightgrey;
