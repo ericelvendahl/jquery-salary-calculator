@@ -95,6 +95,9 @@ function submitClicked() {
   //let rowSelector = `#${employees[i].idNumber}`;
 
   //$(rowSelector).on("hover", console.log("delete button clicked"));
+
+  //double check that handlers are working --> doesn't work
+  //readyNow();
   $(".deleteButton").on("click", deleteRow);
 
   //for remove
